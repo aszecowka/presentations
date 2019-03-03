@@ -1,0 +1,23 @@
+.reveal section img.kyma-image {
+    background-color: #002b36;
+    padding: 20px;
+    height: 100px;
+    border: none;
+    box-shadow: none;
+}
+
+.reveal section img.kyma-code-struct {
+    height: 600px;
+}
+
+a.reference {
+    font-size: 40%;
+}
+
+.reveal section img.caly-na-bialo {
+    height: 600px;
+}
+
+.reveal section img.prow-flow {
+    height: 500px;
+}
