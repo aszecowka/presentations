@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>From Jenkins to Prow</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/moon.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="css/custom.css"/>
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>From Jenkins to Prow</h1>
+            <h4>by Adam Szecowka</h4>
+        </section>
+        <section>
+            <section>
+                <img src="images/logo.png" class="kyma-image"/>
+                <ul>
+                    <li>allows you to extend and customize enterprise applications</li>
+                    <li>Open Source</li>
+                    <li>k8s</li>
+                    <li>cutting-edge solutions + in-house developed features</li>
+                </ul>
+            </section>
+            <section>
+                <img src="images/kyma-code-structure.png" class="kyma-code-struct">
+            </section>
+        </section>
+        <section>
+            <h2>Jenkins shortcomings</h2>
+            <ul>
+                <li>stability</li>
+                <li>out-of-disk space</li>
+                <li>plugin conflicts</li>
+                <li>large JVM require high memory (Go > Java)</li>
+            </ul>
+            <a href="https://medium.com/@jdrawlings/serverless-jenkins-with-jenkins-x-9134cbfe6870" class="reference">
+                https://medium.com/@jdrawlings/serverless-jenkins-with-jenkins-x-9134cbfe6870</a>
+        </section>
+        <section>
+            <section>
+                <img src="images/caly-na-bialo.png" class="caly-na-bialo"/>
+            </section>
+            <section>
+                <img src="images/prow-wild-kyma.png" class="prow-wild"/>
+            </section>
+            <section>
+                <img src="images/prow%20Diagram.png" class="prow-flow">
+            </section>
+            <section>
+                <img src="images/pr-view.png" height="600px">
+            </section>
+            <section>
+                <img src="images/status-page.png" height="600px">
+            </section>
+            <section>
+                <img src="images/details-page.png" height="600px">
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Job types:</h2>
+                <ul>
+                    <li>Presubmit</li>
+                    <li>Postsubmit</li>
+                    <li>Periodic</li>
+                </ul>
+            </section>
+            <section>
+                <img src="images/presubmit-simplified.png" height="600px">
+            </section>
+            <section>
+                <img src="images/build-sh.png" height="600px">
+            </section>
+            <section>
+                <img src="images/job-config-updated.png">
+            </section>
+            <section>
+                <img src="images/job-test.png" height="140%" width="140%">
+            </section>
+            <section>
+                <h2>Additional validation</h2>
+                <ul>
+                    <li>checkonfig (Prow)</li>
+                    <li>unique-job-names (Kyma)</li>
+                </ul>
+            </section>
+        </section>
+        <section>
+
+            <section>
+                <img src="images/kyma-rel-process.png" height="600px"/>
+            </section>
+            <section>
+                <img src="images/rel-comparison.png" height="600px">
+            </section>
+        </section>
+        <section>
+            <h2>Kubernetes rocks</h2>
+            <section>
+                <img src="images/autoscaled-cluster.png" height="550px">
+            </section>
+            <section>
+                <img src="images/grafana-jobs.png" height="120%" width="120%">
+            </section>
+            <section>
+                <img src="images/prow-notifier.png">
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Gcloud</h2>
+                <ul>
+                    <li>vm</li>
+                    <li>k8s clusters</li>
+                    <li>gcr</li>
+                    <li>storage</li>
+                    <li>KMS</li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <h2>Challenges</h2>
+            <ul>
+                <li>not yet released</li>
+                <li>no pipelines by default</li>
+                <li>trigger on-demand jobs?</li>
+            </ul>
+            <h2>Nice</h2>
+            <ul>
+                <li>very responsive Slack channel</li>
+            </ul>
+        </section>
+        <section>
+            <h1>Q&A</h1>
+        </section>
+        <section>
+            <h1>Thank you!</h1>
+        </section>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+</script>
+</body>
+</html>
